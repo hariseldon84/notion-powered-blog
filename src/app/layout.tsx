@@ -5,6 +5,7 @@ import "./globals.css";
 import Layout from "@/components/layout";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Spinner } from "@/components/ui/spinner";
+import NavigationProgress from "@/components/navigation-progress";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,9 +81,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Layout>
-            <Suspense fallback={<Spinner />}>
-              {children}
-            </Suspense>
+            <NavigationProgress>
+              <Suspense fallback={<Spinner />}>
+                {children}
+              </Suspense>
+            </NavigationProgress>
           </Layout>
         </ThemeProvider>
       </body>
