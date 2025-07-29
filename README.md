@@ -1,4 +1,4 @@
-# Notion-Powered Next.js Blog Template
+# Notion Template for Anand's website
 
 A modern, fast, and customizable blog template powered by Notion as a CMS and Next.js. This template allows you to use Notion as your content management system while serving your blog with Next.js.
 
