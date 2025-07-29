@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Layout from "@/components/layout";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Spinner } from "@/components/ui/spinner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -77,7 +79,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Layout>{children}</Layout>
+          <Layout>
+            <Suspense fallback={<Spinner />}>
+              {children}
+            </Suspense>
+          </Layout>
         </ThemeProvider>
       </body>
     </html>

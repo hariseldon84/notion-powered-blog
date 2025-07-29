@@ -50,6 +50,11 @@ export default function AboutPage() {
                 YouTube
               </Link>
             </li>
+            <li>
+              <Link href="https://www.amazon.in/Reboot-Nebula-Chronicles-Anand-Arora/dp/B0B9HD57MV/" className="text-blue-500 hover:underline">
+                Amazon
+              </Link>
+            </li>
           </ul>
         </div>
       </Card>
