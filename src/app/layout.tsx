@@ -11,21 +11,21 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-site.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Anand Arora's blog",
-    template: `%s | Anand Arora's blog`,
+    default: "Anand's blog",
+    template: `%s | Anand's blog`,
   },
-  description: "Anand Arora's personal blog built with Next.js and Notion",
+  description: "Decode AI with Anand Arora",
   openGraph: {
-    title: "Anand Arora's blog",
-    description: "Anand Arora's personal blog built with Next.js and Notion",
+    title: "Anand's blog",
+    description: "Decode AI with Anand Arora",
     url: siteUrl,
-    siteName: "Anand Arora's blog",
+    siteName: "Anand's blog",
     images: [
       {
         url: `${siteUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
-        alt: "Anand Arora's blog",
+        alt: "Anand's blog",
       },
     ],
     locale: "en_US",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anand Arora's blog",
-    description: "Anand Arora's personal blog built with Next.js and Notion",
+    title: "Anand's blog",
+    description: "Decode AI with Anand Arora",
     images: [`${siteUrl}/opengraph-image.png`],
   },
   robots: {
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/anand-profile.jpg",
+    shortcut: "/anand-profile.jpg",
+    apple: "/anand-profile.jpg",
   },
   manifest: `${siteUrl}/site.webmanifest`,
 };

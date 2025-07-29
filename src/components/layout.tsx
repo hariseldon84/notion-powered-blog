@@ -17,10 +17,13 @@ export default function Layout({ children }: LayoutProps) {
                 href="/"
                 className="flex items-center text-xl font-bold text-foreground"
               >
-                My Blog
+                Anand's blog
               </Link>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-6">
+              <Link href="/about" className="text-foreground hover:text-foreground/80">
+                About me
+              </Link>
               <ModeToggle />
             </div>
           </div>
@@ -34,7 +37,7 @@ export default function Layout({ children }: LayoutProps) {
       <footer className="bg-muted border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <p className="text-center text-muted-foreground">
-            © {new Date().getFullYear()} My Blog. All rights reserved.
+            © Anand Arora 2025-26
           </p>
         </div>
       </footer>
