@@ -1,10 +1,20 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Spinner } from './ui/spinner';
 
+// Wrapper component that doesn't use navigation hooks directly
 export default function NavigationProgress({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={<div className="fixed inset-0 z-50"><Spinner /></div>}>
+      <NavigationProgressInner>{children}</NavigationProgressInner>
+    </Suspense>
+  );
+}
+
+// Inner component that uses the hooks safely inside Suspense
+function NavigationProgressInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [isNavigating, setIsNavigating] = useState(true); // Start with true for initial page load
