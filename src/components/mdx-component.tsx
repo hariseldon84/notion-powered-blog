@@ -67,20 +67,16 @@ const components = {
   pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
     return <pre className={cn("bg-transparent p-0", className)} {...props} />;
   },
-  img: ({ src, alt, width, height, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => {
-    if (!src) return null;
-    
-    // Handle both string URLs and Blob objects
-    const imageUrl = typeof src === 'string' ? src : URL.createObjectURL(src);
-    
+  img: ({ src, alt }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    if (!src || typeof src !== 'string') return null;
     return (
       <Image
-        src={imageUrl}
+        src={src}
         alt={alt || ""}
         className="mb-4 h-auto w-full rounded-md"
-        width={1000}
-        height={1000}
-        unoptimized={imageUrl.includes('notion')} // Disable optimization for Notion images
+        width={1200}
+        height={800}
+        unoptimized
       />
     );
   },
